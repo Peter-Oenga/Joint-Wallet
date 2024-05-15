@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,30 +37,31 @@
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Dewi</a></h1>
+      <h1 class="logo"><a href="{% url 'index' %}">Joint Wallet</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <a href="index.html" class="logo"><img src="{% static 'assets/img/logo.png'%}" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="{% url 'index' %}">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="{% url 'portfolio' %}">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'login' %}">Login</a></li>
+          <li><a class="getstarted scrollto" href="#about">SignUp</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
-<br><br><br><br><br><br><br><br><br><br><br><br>
+ 
+
   {% block content %}
 
   {% endblock %}
-  <br><br><br><br><br><br><br><br><br><br><br><br>
+ 
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">
@@ -136,6 +138,9 @@
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+    
+  
   <!-- Vendor JS Files -->
 <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
 <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
@@ -147,3 +152,8 @@
 
 <!-- Template Main JS File -->
 <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
+

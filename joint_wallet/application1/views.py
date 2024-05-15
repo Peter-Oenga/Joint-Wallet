@@ -9,9 +9,6 @@ def index(request):
 def inner_page(request):
     return render(request, "inner-page.html", {})
 
-def portfolio(request):
-    return render(request, "portfolio-details.html", {})
-
 def login_user(request):
     return render(request, "login.html", {})
 

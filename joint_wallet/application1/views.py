@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import CustomUser
+from .models import Member
 from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.

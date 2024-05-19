@@ -1,13 +1,30 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser
+from .models import MonthlySaving, Fine, Transaction, Loan, Payment, CustomUser
+
+# class CustomUserAdmin(UserAdmin):
+#     model = CustomUser
+#     list_display = ['username', 'email', 'first_name', 'last_name', 'phone_number', 'address', 'is_staff']
+#     fieldsets = UserAdmin.fieldsets + (
+#         (None, {'fields': ('phone_number', 'address')}),
+#     )
+#     add_fieldsets = UserAdmin.add_fieldsets + (
+#         (None, {'fields': ('phone_number', 'address')}),
+#     )
+
 
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
-    list_display = ('username', 'email', 'phone_number', 'full_name', 'is_staff', 'is_superuser')
-    search_fields = ('username', 'email', 'phone_number', 'full_name')
-    list_filter = ('is_staff', 'is_superuser')
-    filter_horizontal = ()
-
+    fieldsets = (
+        (None, {'fields': ('username', 'password')}),
+        ('Personal info', {'fields': ('first_name', 'last_name', 'email', 'phone_number', 'address')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Important dates', {'fields': ('last_login', 'date_joined')}),
+    )
 
 admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(MonthlySaving)
+admin.site.register(Fine)
+admin.site.register(Transaction)
+admin.site.register(Loan)
+admin.site.register(Payment)

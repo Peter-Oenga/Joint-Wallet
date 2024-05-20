@@ -33,3 +33,6 @@ def login_user(request):
 
 def logout_user(request):
     pass
+
+def register(request):
+    return render(request, "register.html", {})

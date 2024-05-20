@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'application1',
-    'crispy_forms',
+    'codes',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -114,6 +114,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+JAZZMIN_SETTINGS = {
+    "site_brand": "Joint Wallet",
+    "copyright": "Joint Wallet",
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/

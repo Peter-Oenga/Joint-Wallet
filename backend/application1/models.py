@@ -82,7 +82,7 @@ class MonthlySaving(models.Model):
 class Fine(models.Model):
     fines_id = models.AutoField(primary_key=True)
     member = models.ForeignKey('CustomUser', on_delete=models.CASCADE)
-    fine_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    fine_amount = models.DecimalField(max_digits=10, decimal_places=2, default=50.0)
     fine_date = models.DateField()
 
     def __str__(self):

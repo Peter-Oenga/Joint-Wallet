@@ -1,6 +1,7 @@
 from django.http import Http404
 from django.shortcuts import render, redirect
 from .models import CustomUser
+from .models import Video
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from rest_framework import generics
@@ -59,6 +60,7 @@ class MemberDetailView(APIView):
 
 # Create your views here.
 def index(request):
+    video=Video.objects.all()
     return render(request, "index.html", {})
 
 def inner_page(request):

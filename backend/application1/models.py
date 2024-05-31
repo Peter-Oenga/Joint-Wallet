@@ -45,6 +45,13 @@ class BlogPost(models.Model):
     notify_users_timestamp = models.DateTimeField(blank=True, null=True, auto_now_add=False)
     active_now = models.BooleanField(default=True)
 
+class Video(models.Model):
+    caption = models.CharField(max_length=100)
+    video=models.FileField(upload_to="video/%y")
+
+    def __str__(self):
+        return self.caption
+
 @receiver(pre_save, sender=BlogPost)
 def blog_pre_save(sender, instance, *args, **kwargs):
     if not instance.slug:

@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import MonthlySaving, Fine, Transaction, Loan, Payment, CustomUser, BlogPost
+from .models import MonthlySaving, Fine, Transaction, Loan, Payment, CustomUser, BlogPost, Video
+
+
 
 # class CustomUserAdmin(UserAdmin):
 #     model = CustomUser
@@ -29,3 +31,4 @@ admin.site.register(Transaction)
 admin.site.register(Loan)
 admin.site.register(Payment)
 admin.site.register(BlogPost)
+admin.site.register(Video)

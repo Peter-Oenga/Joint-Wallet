@@ -47,7 +47,7 @@ class BlogPost(models.Model):
 
 class Video(models.Model):
     caption = models.CharField(max_length=100)
-    video=models.FileField(upload_to="video/%y")
+    video_file = models.FileField(upload_to='videos/')
 
     def __str__(self):
         return self.caption

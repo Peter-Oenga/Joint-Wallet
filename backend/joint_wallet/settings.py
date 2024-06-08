@@ -1,8 +1,5 @@
 
 import os
-import django_heroku
-import dj_database_url
-from decouple import config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +22,8 @@ DEBUG = True
 
 INSTALLED_APPS = [
     'rest_framework',
-    'jazzmin',
+    
+    # 'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    
 ]
 
 REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny']}
@@ -127,10 +125,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-JAZZMIN_SETTINGS = {
-    "site_brand": "Joint Wallet",
-    "copyright": "Joint Wallet",
-}
+# JAZZMIN_SETTINGS = {
+#     "site_brand": "Joint Wallet",
+#     "copyright": "Joint Wallet",
+# }
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -138,7 +136,7 @@ JAZZMIN_SETTINGS = {
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL="/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media/')
@@ -148,4 +146,3 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-django_heroku.settings(locals())

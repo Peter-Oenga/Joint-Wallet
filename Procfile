@@ -1,1 +1,0 @@
-web: gunicorn joint_wallet.wsgi
